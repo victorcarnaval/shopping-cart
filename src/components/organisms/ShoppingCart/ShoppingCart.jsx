@@ -3,12 +3,12 @@ import React from 'react'
 import { useCartContext } from '../../../services/CartContext'
 
 import styles from './ShoppingCart.module.css'
-import { Container } from '../../atoms'
-import { HeaderForwardPage } from '..'
+import { Button, Container } from '../../atoms'
+import { HeaderForwardPage, ProductCartList } from '..'
 
 const ShoppingCart = () => {
-    const { visible } = useCartContext()
-    
+    const { visible, totalDistinctProductsInCart } = useCartContext()
+
     return visible
         ? (
             <div className={styles.shoppingCart}>
@@ -16,7 +16,9 @@ const ShoppingCart = () => {
 
                 <section className={styles.shoppingCartContent}>
                     <Container>
-                        <h2>ITEMS_HERE</h2>
+                        <ProductCartList />
+
+                        {totalDistinctProductsInCart > 0 && <Button text="Check Out" theme="PRIMARY" onClick={() => console.log('Check Out')} />}
                     </Container>
                 </section>
             </div>

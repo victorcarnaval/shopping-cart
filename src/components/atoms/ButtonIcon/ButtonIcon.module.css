@@ -1,0 +1,9 @@
+.buttonIcon {
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: var(--soft-grey);
+    color: var(--text-helper-color);
+    font-weight: var(--title-font-weight);
+    font-size: var(--font-size);
+    border: 1px solid var(--soft-grey);
+}

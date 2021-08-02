@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 
 const CartContext = createContext()
 
@@ -15,40 +15,45 @@ const CartProvider = ({ children }) => {
 
     const addToCart = (id) => {
         setProductsCart(prevState => {
-            const newProducts = { ...prevState }
-            newProducts[id] = (newProducts[id] || 0) + 1
-            return newProducts
+            const obj = { ...prevState }
+            obj[id] = (obj[id] || 0) + 1
+            return obj
         })
     }
 
     const removeFromCart = (id) => {
         setProductsCart(prevState => {
-            const newProducts = { ...prevState }
-            newProducts[id] = (newProducts[id] || 1) - 1
+            const obj = { ...prevState }
+            obj[id] = (obj[id] || 1) - 1
 
-            if (newProducts[id] === 0) {
-                delete newProducts[id]
+            if (obj[id] === 0) {
+                delete obj[id]
             }
-            return newProducts
+            return obj
         })
     }
 
-    const totalProducts = useMemo(() => products.length, [productsCart])
+    const totalProducts = products.length
 
-    const totalProductsInCart = useMemo(() => Object.values(productsCart).reduce((a, b) => a + b, 0), [productsCart])
+    const totalProductsInCart = Object.values(productsCart).reduce((a, b) => a + b, 0)
 
-    const totalDistinctProductsInCart = useMemo(() => Object.keys(productsCart).length, [productsCart])
+    const totalDistinctProductsInCart = Object.keys(productsCart).length
+
+    const productsInCart = Object.keys(productsCart).map(id => products.find(product => product.id === id))
+
+    const getTotalProductInCart = id => productsCart[id]
 
     const STORE = {
         visible,
         products,
-        productsCart,
+        productsInCart,
         totalProducts,
         totalProductsInCart,
         totalDistinctProductsInCart,
         toggleCart,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        getTotalProductInCart
     }
 
     return (

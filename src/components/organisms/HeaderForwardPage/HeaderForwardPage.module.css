@@ -3,13 +3,17 @@
     top: 0;
     left: 0;
     right: 0;
-    padding-top: 7.5rem;
+    padding-top: 6.5rem;
     padding-bottom: 1.5rem;
-    box-shadow: var(--box-shadow);
     background-color: var(--white);
+}
+
+.headerPreviousButton {
+    margin-bottom: 2rem;
 }
 
 .headerActions {
     display: flex;
     justify-content: space-between;
+    margin-top: 1.5rem;
 }

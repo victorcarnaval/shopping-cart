@@ -1,0 +1,6 @@
+.container {
+    padding-left: var(--padding-box);
+    padding-right: var(--padding-box);
+    max-width: 1200px;
+    margin: 0 auto;
+}

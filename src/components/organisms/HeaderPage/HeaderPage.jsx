@@ -1,18 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { useCartContext } from '../../../services/CartContext'
+
 import styles from './HeaderPage.module.css'
-import { TextHeader, TextHelper } from '../../atoms'
+import { Container, TextHeader, TextHelper } from '../../atoms'
 
 const HeaderPage = ({ name }) => {
+    const { totalProducts } = useCartContext()
 
     return (
         <header className={styles.header}>
-            <TextHeader text={name} theme="PRIMARY" />
+            <Container>
+                <TextHeader text={name} theme="PRIMARY" />
 
-            <div className={styles.headerActions}>
-                <TextHelper text="ITEMS_PER_PAGE" />
-            </div>
+                <div className={styles.headerActions}>
+                    <TextHelper text={`${totalProducts} items listed`} />
+                </div>
+            </Container>
         </header>
     )
 }
@@ -21,4 +26,4 @@ HeaderPage.propTypes = {
     name: PropTypes.string.isRequired
 }
 
-export default HeaderPage
+export default React.memo(HeaderPage)

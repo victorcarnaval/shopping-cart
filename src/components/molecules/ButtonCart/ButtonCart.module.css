@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: var(--box-shadow);
+    z-index: 3;
 }
 
 .emptyCart {

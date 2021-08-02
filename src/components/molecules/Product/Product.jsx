@@ -1,10 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { useCartContext } from '../../../services/CartContext'
+
 import styles from './Product.module.css'
 import { ProductImage, ProductName, ProductPrice, Button } from '../../atoms'
 
 const Product = ({ id, image, name, price, stock }) => {
+    const { addToCart } = useCartContext()
 
     return (
         <div className={styles.product} data-id={id} data-stock={stock}>
@@ -16,7 +19,7 @@ const Product = ({ id, image, name, price, stock }) => {
                 <ProductPrice price={price} />
             </div>
             <div className={styles.productActions}>
-                <Button text="Add to cart" onClick={() => console.log('clicked')} />
+                <Button text="Add to cart" onClick={() => addToCart(id)} />
             </div>
         </div>
     )

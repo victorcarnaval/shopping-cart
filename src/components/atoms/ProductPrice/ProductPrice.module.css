@@ -1,0 +1,6 @@
+.productPrice {
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    text-align: right;
+    min-width: 10rem;
+}

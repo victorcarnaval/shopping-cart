@@ -1,0 +1,4 @@
+.text {
+    font-size: var(--helper-font-size);
+    color: var(--text-helper-color);
+}

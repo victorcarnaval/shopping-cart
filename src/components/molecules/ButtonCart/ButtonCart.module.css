@@ -1,0 +1,35 @@
+.buttonCartWrapper {
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+    bottom: 2rem;
+    right: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+}
+
+.emptyCart {
+    background: url('./shopping-cart.png') #fff no-repeat center;
+    background-size: 2.5rem;
+}
+
+.fullCart {
+    background: url('./shopping-cart-full.png') #fff no-repeat center;
+    background-size: 2.5rem;
+}
+
+.buttonCart {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.buttonCartInfo {
+    position: absolute;
+    top: 0.3rem;
+    right: -0.2rem;
+}

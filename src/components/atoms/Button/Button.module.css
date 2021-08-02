@@ -1,0 +1,21 @@
+.button {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    background-color: var(--text-helper-color);
+    color: var(--text-color);
+    width: 100%;
+    padding: 1.7rem 0;
+    border-radius: 0.4rem;
+    box-shadow: var(--box-shadow);
+}
+
+.buttonDefault {
+    background-color: var(--text-color);
+    color: var(--white);
+}
+
+.buttonPrimary {    
+    background-color: var(--primary-color);
+    color: var(--white);
+}

@@ -1,0 +1,34 @@
+.product {
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+}
+
+.productImage {
+    width: 100%;
+}
+
+.productDescription {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+}
+
+.productDescription h2 {
+    max-width: 20rem;
+    width: 100%;
+}
+
+.productActions {
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: 620px) {
+}
+
+@media screen and (min-width: 960px) {}
+
+@media screen and (min-width: 1200px) {}

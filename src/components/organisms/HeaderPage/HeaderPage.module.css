@@ -1,0 +1,14 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 7.5rem var(--padding-box) 1.5rem;
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+}
+
+.headerActions {
+    display: flex;
+    justify-content: space-between;
+}

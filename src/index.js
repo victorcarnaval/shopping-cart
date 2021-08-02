@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import { Featured } from './components/pages'
+
 import './styles/styles.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>Shopping Cart</h1>
+    <Featured />
   </React.StrictMode>,
   document.getElementById('root')
 )

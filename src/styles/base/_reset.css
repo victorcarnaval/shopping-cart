@@ -2,4 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--white);
+    font-family: var(--font-family);
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+button {
+    outline: 0;
+    background: none;
+    border: none;
 }

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
 const CartContext = createContext()
 
@@ -58,6 +58,19 @@ const CartProvider = ({ children }) => {
 
     const getTotalProductInCart = id => productsCart[id]
 
+    const getPriceCart = useMemo(() => {
+        let total = 0
+
+        productsInCart.forEach(product => {
+            const quantity = productsCart[product.id]
+            const price = Number(quantity * product.price)
+
+            total += price
+        })
+
+        return total
+    }, [productsInCart, productsCart])
+
     const STORE = {
         visible,
         products,
@@ -69,7 +82,8 @@ const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         getTotalProductInCart,
-        removeAllFromCart
+        removeAllFromCart,
+        getPriceCart
     }
 
     return (

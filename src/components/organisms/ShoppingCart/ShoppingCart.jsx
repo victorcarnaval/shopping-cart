@@ -7,7 +7,7 @@ import { Button, Container } from '../../atoms'
 import { HeaderForwardPage, ProductCartList } from '..'
 
 const ShoppingCart = () => {
-    const { visible, totalDistinctProductsInCart } = useCartContext()
+    const { visible, totalDistinctProductsInCart, getPriceCart } = useCartContext()
 
     return visible
         ? (
@@ -21,7 +21,7 @@ const ShoppingCart = () => {
                         {totalDistinctProductsInCart > 0 && (
                             <div className={styles.shoppingCartCheckout}>
                                 <Button
-                                    text="Check Out"
+                                    text={`Check Out: R$ ${getPriceCart.toFixed(2)}`}
                                     theme="PRIMARY"
                                     onClick={() => console.log('Check Out')}
                                 />

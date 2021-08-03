@@ -5,9 +5,10 @@ import { useCartContext } from '../../../services/CartContext'
 
 import styles from './ProductCart.module.css'
 import { ProductImage, ProductName, ProductPrice, ButtonIcon } from '../../atoms'
+import TrashImage from './trash.png'
 
 const ProductCart = ({ id, image, name, price, stock }) => {
-    const { addToCart, removeFromCart, getTotalProductInCart } = useCartContext()
+    const { addToCart, removeFromCart, getTotalProductInCart, removeAllFromCart } = useCartContext()
     const total = getTotalProductInCart(id)
 
     return (
@@ -23,8 +24,14 @@ const ProductCart = ({ id, image, name, price, stock }) => {
 
             <div className={styles.productCartActions}>
                 <ButtonIcon onClick={() => removeFromCart(id)}>-</ButtonIcon>
+
                 <span>{total}</span>
+
                 <ButtonIcon onClick={() => addToCart(id)}>+</ButtonIcon>
+
+                <ButtonIcon onClick={() => removeAllFromCart(id)}>
+                    <img src={TrashImage} alt="Ícone de lixeira" title="Removar produto" />
+                </ButtonIcon>
             </div>
         </div>
     )

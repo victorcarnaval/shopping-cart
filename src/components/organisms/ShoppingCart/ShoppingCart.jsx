@@ -18,7 +18,15 @@ const ShoppingCart = () => {
                     <Container>
                         <ProductCartList />
 
-                        {totalDistinctProductsInCart > 0 && <Button text="Check Out" theme="PRIMARY" onClick={() => console.log('Check Out')} />}
+                        {totalDistinctProductsInCart > 0 && (
+                            <div className={styles.shoppingCartCheckout}>
+                                <Button
+                                    text="Check Out"
+                                    theme="PRIMARY"
+                                    onClick={() => console.log('Check Out')}
+                                />
+                            </div>
+                        )}
                     </Container>
                 </section>
             </div>

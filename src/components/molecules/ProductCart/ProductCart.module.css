@@ -18,7 +18,7 @@
     height: 10rem;
 }
 
-.productDescription {    
+.productDescription {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
@@ -56,4 +56,12 @@
 
 .productCartActions > * {
     vertical-align: middle;
+}
+
+.productCartActions > button:last-of-type {
+    margin-left: 2rem;
+}
+
+.productCartActions > button:last-of-type > img {
+    width: 1.5rem;
 }

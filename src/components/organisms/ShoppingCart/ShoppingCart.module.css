@@ -11,13 +11,25 @@
 }
 
 .shoppingCartContent {
-    padding-top: 23rem;
+    padding-top: 16rem;
     padding-bottom: 5rem;
 }
 
+.shoppingCartCheckout {
+    position: absolute;
+    bottom: 1rem;
+    right: var(--padding-box);
+    left: var(--padding-box);
+}
+
 .shoppingCartContent ul {
+    padding-right: 1rem;
     overflow-y: scroll;
-    height: 38rem;
+    height: 60vh;
+}
+
+.shoppingCartContent ul::-webkit-scrollbar {
+    width: 2px;
 }
 
 @media screen and (min-width: 375px) {
